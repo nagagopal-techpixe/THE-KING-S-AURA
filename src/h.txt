@@ -1,0 +1,63 @@
+const CollectionsPage = () => (
+  <div className="bg-[#050505] text-[#F5F5F1]">
+    {/* Background Section (same as HeritagePage) */}
+    <section className="h-[80vh] relative flex items-center justify-center overflow-hidden">
+      <motion.img
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 5 }}
+        src={ASSETS.heritage} // same background image
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
+      />
+      <div className="relative text-center z-10 px-4">
+        <FadeIn>
+          <Emblem className="w-20 h-20 mx-auto mb-9" />
+        <h1
+  className="text-5xl md:text-9xl uppercase tracking-tighter mb-4 font-bold leading-tight"
+  style={{ fontFamily: FONTS.heading }}
+>
+  GALLERY OF COMMAND
+</h1>
+
+          <p className="text-xs tracking-[1em] uppercase text-[#D4AF37] font-bold">THE ATELIER COLLECTIONS</p>
+        </FadeIn>
+      </div>
+    </section>
+
+    {/* Collections */}
+    <div className="max-w-4xl mx-auto py-48 px-6 space-y-48">
+      {[
+        { title: "THE CLASSIC REGIMENT", copy: "Structured discipline for the modern leader. Precise, unyielding, and eternal.", img: ASSETS.classic, label: "01" },
+        { title: "THE SOVEREIGN SILKS", copy: "Opulence redefined. Fluid textures that command attention without effort.", img: ASSETS.premium, label: "02" },
+        { title: "THE NOBLE PRINT", copy: "Bold geometry for those who define their own era.", img: ASSETS.printed, label: "03" },
+        { title: "THE APEX RESERVE", copy: "The highest expression of craft. By special invitation only.", img: ASSETS.exclusive, label: "04" },
+      ].map((col, idx) => (
+       <section className="h-[150vh] relative flex flex-col items-center justify-start pt-64 overflow-hidden">
+  <motion.img
+    initial={{ scale: 1.1 }}
+    animate={{ scale: 1 }}
+    transition={{ duration: 5 }}
+    src={ASSETS.heritage} // background image
+    className="absolute inset-0 w-full h-full object-cover opacity-20"
+  />
+  <div className="relative text-center z-10 px-4">
+    <FadeIn>
+      {/* Move Emblem further down */}
+      <Emblem className="w-20 h-20 mx-auto mb-20" /> 
+      <h1
+        className="text-6xl md:text-[10rem] uppercase tracking-tighter mb-4 font-bold leading-none"
+        style={{ fontFamily: FONTS.heading }}
+      >
+        GALLERY OF COMMAND
+      </h1>
+      <p className="text-xs tracking-[1em] uppercase text-[#D4AF37] font-bold">
+        THE ATELIER COLLECTIONS
+      </p>
+    </FadeIn>
+  </div>
+</section>
+
+      ))}
+    </div>
+  </div>
+);
